@@ -84,7 +84,7 @@ def get_details(url):
     
     try:
         raw_text = html.select('.box-description')[0].get_text().strip()
-        stamp['raw_text'] = raw_text.replace('\n', ' ')
+        stamp['raw_text'] = raw_text.replace('\n', ' ').replace('\xa0',' ')
     except:
         stamp['raw_text'] = None
         
